@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://doaaidg46emlu"]
+
+[ext_resource type="Texture2D" uid="uid://c8ff7y713m0qc" path="res://assets/wooden-box.png" id="1_ukw5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x403i"]
+albedo_texture = ExtResource("1_ukw5w")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_rw847"]
+lightmap_size_hint = Vector2i(56, 61)
+material = SubResource("StandardMaterial3D_x403i")
+size = Vector3(10, 0.5, 0.5)
+
+[node name="floor" type="CSGMesh3D" unique_id=732825916]
+use_collision = true
+mesh = SubResource("BoxMesh_rw847")

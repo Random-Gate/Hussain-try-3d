@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dc2q4s05q8jky"]
+
+[ext_resource type="Texture2D" uid="uid://c8ff7y713m0qc" path="res://assets/wooden-box.png" id="1_n46gy"]
+[ext_resource type="PackedScene" uid="uid://doaaidg46emlu" path="res://scenes/floor.tscn" id="1_wk2sy"]
+[ext_resource type="PackedScene" uid="uid://dtci8nfpf4aj6" path="res://scenes/character_body_3d.tscn" id="2_x403i"]
+[ext_resource type="PackedScene" uid="uid://dou0pou5rqxom" path="res://scenes/enemy.tscn" id="3_rw847"]
+[ext_resource type="PackedScene" uid="uid://bte2d7bwknfm4" path="res://scenes/gate.tscn" id="4_tufwe"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x403i"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rw847"]
+sky_material = SubResource("ProceduralSkyMaterial_x403i")
+
+[sub_resource type="Environment" id="Environment_tufwe"]
+background_mode = 2
+sky = SubResource("Sky_rw847")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x403i"]
+albedo_texture = ExtResource("1_n46gy")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_rw847"]
+lightmap_size_hint = Vector2i(56, 61)
+material = SubResource("StandardMaterial3D_x403i")
+size = Vector3(10, 0.5, 0.5)
+
+[node name="3Dtests" type="Node3D" unique_id=937866230]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=304061169]
+environment = SubResource("Environment_tufwe")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1332787290]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="floor" parent="." unique_id=732825916 instance=ExtResource("1_wk2sy")]
+
+[node name="floor2" type="CSGMesh3D" parent="." unique_id=872826179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.114149, -1.0678153, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_rw847")
+
+[node name="CharacterBody3D" parent="." unique_id=2100094950 instance=ExtResource("2_x403i")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.6351597, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="enemy" parent="." unique_id=403163206 instance=ExtResource("3_rw847")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.4140744, 0.7614925, 0)
+
+[node name="enemy2" parent="." unique_id=1406687891 instance=ExtResource("3_rw847")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.6070118, 1.2315503, 0)
+
+[node name="Area3D" parent="." unique_id=627799573 instance=ExtResource("4_tufwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.589376, -0.41159034, 0)

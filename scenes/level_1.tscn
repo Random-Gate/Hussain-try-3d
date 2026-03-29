@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bnhql8iq8evof"]
+
+[ext_resource type="PackedScene" uid="uid://doaaidg46emlu" path="res://scenes/floor.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://dtci8nfpf4aj6" path="res://scenes/character_body_3d.tscn" id="2_bswci"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bswci"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rus8k"]
+sky_material = SubResource("ProceduralSkyMaterial_bswci")
+
+[sub_resource type="Environment" id="Environment_5xbjy"]
+background_mode = 2
+sky = SubResource("Sky_rus8k")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level 1" type="Node3D" unique_id=980918483]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1248199493]
+environment = SubResource("Environment_5xbjy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=437858398]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DeathBox" parent="." unique_id=732825916 instance=ExtResource("1_014kd")]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.5836525, 0)
+
+[node name="floor" parent="." unique_id=1391959121 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="floor2" parent="." unique_id=756633782 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11, 0)
+
+[node name="floor3" parent="." unique_id=1735997390 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
+
+[node name="floor4" parent="." unique_id=755948209 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 6, 17, 0)
+
+[node name="floor5" parent="." unique_id=1830979026 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 23, 11, 0)
+
+[node name="CharacterBody3D" parent="." unique_id=2100094950 instance=ExtResource("2_bswci")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 10, 0)

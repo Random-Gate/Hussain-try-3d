@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bte2d7bwknfm4"]
+
+[ext_resource type="Script" uid="uid://couo3w4o3w14m" path="res://scenes/gate.gd" id="2_xwxio"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghoj6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfvdi"]
+
+[node name="Area3D" type="Area3D" unique_id=627799573]
+script = ExtResource("2_xwxio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=964437875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03416115, 0)
+shape = SubResource("BoxShape3D_ghoj6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=147738261]
+transform = Transform3D(-4.371139e-08, 0, 0.5, 0, 1, 0, -1, 0, -2.1855694e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_xfvdi")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1911387358]
+transform = Transform3D(-4.371139e-08, 0, 0.5, 0, 1, 0, -1, 0, -2.1855694e-08, 0, 0, 0)
+use_collision = true

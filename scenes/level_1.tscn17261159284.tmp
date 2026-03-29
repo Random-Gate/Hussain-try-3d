@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bnhql8iq8evof"]
+
+[ext_resource type="PackedScene" uid="uid://doaaidg46emlu" path="res://scenes/floor.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://dtci8nfpf4aj6" path="res://scenes/character_body_3d.tscn" id="2_bswci"]
+
+[node name="Level 1" type="Node3D" unique_id=980918483]
+
+[node name="DeathBox" parent="." unique_id=732825916 instance=ExtResource("1_014kd")]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.519291, 0)
+
+[node name="floor" parent="." unique_id=1391959121 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="floor2" parent="." unique_id=756633782 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11, 0)
+
+[node name="floor3" parent="." unique_id=1735997390 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
+
+[node name="floor4" parent="." unique_id=755948209 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 6, 17, 0)
+
+[node name="floor5" parent="." unique_id=1830979026 instance=ExtResource("1_014kd")]
+transform = Transform3D(0.58, 0, 0, 0, 1, 0, 0, 0, 1, 21, 11, 0)
+
+[node name="CharacterBody3D" parent="." unique_id=2100094950 instance=ExtResource("2_bswci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
